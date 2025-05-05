@@ -11,3 +11,8 @@ export const prisma =
   })
 
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma
+
+// Ensure Prisma client is disconnected when the app is shutting down
+process.on("beforeExit", async () => {
+  await prisma.$disconnect()
+})

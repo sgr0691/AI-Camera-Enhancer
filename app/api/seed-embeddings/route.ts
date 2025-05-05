@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server"
-import { prisma } from "@/server/db"
+import { PrismaClient } from "@prisma/client"
 import { OpenAI } from "openai"
 
 export const runtime = "nodejs"
+
+// Initialize Prisma client
+const prisma = new PrismaClient()
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -57,5 +60,8 @@ export async function GET() {
   } catch (error) {
     console.error("Error seeding embeddings:", error)
     return NextResponse.json({ error: "Failed to seed embeddings" }, { status: 500 })
+  } finally {
+    // Disconnect Prisma client to avoid hanging connections
+    await prisma.$disconnect()
   }
 }
