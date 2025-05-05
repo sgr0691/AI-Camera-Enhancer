@@ -4,9 +4,9 @@ import { useState } from "react"
 import { useComponent } from "@/context/component-context"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { trpc } from "@/lib/trpc"
+import { CheckCircle2, Info, Palette, Code } from "lucide-react"
 
 export function AIAssistance() {
   const { activeComponent } = useComponent()
@@ -21,14 +21,20 @@ export function AIAssistance() {
 
   return (
     <Card className="h-full">
-      <CardHeader>
+      <CardHeader className="pb-3">
         <CardTitle>AI Assistance</CardTitle>
       </CardHeader>
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="mx-4 mb-2">
-          <TabsTrigger value="guidelines">Guidelines</TabsTrigger>
-          <TabsTrigger value="tokens">Design Tokens</TabsTrigger>
-          <TabsTrigger value="examples">Examples</TabsTrigger>
+        <TabsList className="w-full">
+          <TabsTrigger value="guidelines" className="flex-1">
+            Guidelines
+          </TabsTrigger>
+          <TabsTrigger value="tokens" className="flex-1">
+            Design Tokens
+          </TabsTrigger>
+          <TabsTrigger value="examples" className="flex-1">
+            Examples
+          </TabsTrigger>
         </TabsList>
         <CardContent className="p-0">
           <ScrollArea className="h-[calc(100vh-24rem)]">
@@ -39,25 +45,33 @@ export function AIAssistance() {
                     <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
                   </div>
                 ) : (
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-medium">Accessibility Guidelines</h3>
-                    <ul className="space-y-2">
-                      {aiSuggestions?.guidelines.map((guideline, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          <span className="mt-0.5 text-green-500">✓</span>
-                          <span>{guideline}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <h3 className="text-lg font-medium">Best Practices</h3>
-                    <ul className="space-y-2">
-                      {aiSuggestions?.bestPractices.map((practice, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          <span className="mt-0.5 text-blue-500">ℹ</span>
-                          <span>{practice}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="mb-3 flex items-center gap-2 font-medium">
+                        <CheckCircle2 className="h-4 w-4 text-green-500" />
+                        Accessibility Guidelines
+                      </h3>
+                      <ul className="space-y-2">
+                        {aiSuggestions?.guidelines.map((guideline, index) => (
+                          <li key={index} className="text-sm text-muted-foreground">
+                            {guideline}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="mb-3 flex items-center gap-2 font-medium">
+                        <Info className="h-4 w-4 text-blue-500" />
+                        Best Practices
+                      </h3>
+                      <ul className="space-y-2">
+                        {aiSuggestions?.bestPractices.map((practice, index) => (
+                          <li key={index} className="text-sm text-muted-foreground">
+                            {practice}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 )}
               </TabsContent>
@@ -68,13 +82,19 @@ export function AIAssistance() {
                   </div>
                 ) : (
                   <div className="space-y-4">
-                    <h3 className="text-lg font-medium">Recommended Tokens</h3>
-                    <div className="grid grid-cols-2 gap-2">
+                    <h3 className="flex items-center gap-2 font-medium">
+                      <Palette className="h-4 w-4 text-purple-500" />
+                      Recommended Tokens
+                    </h3>
+                    <div className="grid grid-cols-1 gap-2">
                       {aiSuggestions?.tokens.map((token, index) => (
-                        <Badge key={index} variant="outline" className="justify-between">
-                          <span>{token.name}</span>
-                          <span className="ml-2 text-muted-foreground">{token.value}</span>
-                        </Badge>
+                        <div key={index} className="flex items-center justify-between rounded-md border p-2">
+                          <span className="text-sm font-medium">{token.name}</span>
+                          <div className="flex items-center gap-2">
+                            <div className="h-4 w-4 rounded-full border" style={{ backgroundColor: token.value }}></div>
+                            <code className="rounded bg-muted px-1 py-0.5 text-xs">{token.value}</code>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -87,12 +107,17 @@ export function AIAssistance() {
                   </div>
                 ) : (
                   <div className="space-y-4">
-                    <h3 className="text-lg font-medium">Usage Examples</h3>
+                    <h3 className="flex items-center gap-2 font-medium">
+                      <Code className="h-4 w-4 text-amber-500" />
+                      Usage Examples
+                    </h3>
                     {aiSuggestions?.examples.map((example, index) => (
-                      <div key={index} className="rounded-md border p-4">
-                        <h4 className="mb-2 font-medium">{example.title}</h4>
-                        <p className="text-sm text-muted-foreground">{example.description}</p>
-                        <pre className="mt-2 overflow-x-auto rounded-md bg-muted p-2 text-xs">
+                      <div key={index} className="rounded-md border">
+                        <div className="border-b p-3">
+                          <h4 className="font-medium">{example.title}</h4>
+                          <p className="text-sm text-muted-foreground">{example.description}</p>
+                        </div>
+                        <pre className="overflow-x-auto rounded-b-md bg-muted p-3 text-xs">
                           <code>{example.code}</code>
                         </pre>
                       </div>

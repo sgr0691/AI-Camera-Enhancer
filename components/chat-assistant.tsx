@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Avatar } from "@/components/ui/avatar"
-import { X, Send } from "lucide-react"
+import { X, Send, Bot } from "lucide-react"
 import { trpc } from "@/lib/trpc"
 
 interface ChatAssistantProps {
@@ -76,9 +76,9 @@ export function ChatAssistant({ isOpen, onClose }: ChatAssistantProps) {
 
   return (
     <Card className="fixed bottom-4 right-4 z-50 flex h-[500px] w-[400px] flex-col shadow-xl">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-lg">Design Assistant</CardTitle>
-        <Button variant="ghost" size="icon" onClick={onClose}>
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 border-b px-4 py-3">
+        <CardTitle>Design Assistant</CardTitle>
+        <Button variant="ghost" size="icon" onClick={onClose} className="h-8 w-8">
           <X className="h-4 w-4" />
         </Button>
       </CardHeader>
@@ -94,25 +94,7 @@ export function ChatAssistant({ isOpen, onClose }: ChatAssistantProps) {
                 >
                   {message.role === "assistant" && (
                     <Avatar className="h-6 w-6">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-bot"
-                      >
-                        <path d="M12 8V4H8" />
-                        <rect width="16" height="12" x="4" y="8" rx="2" />
-                        <path d="M2 14h2" />
-                        <path d="M20 14h2" />
-                        <path d="M15 13v2" />
-                        <path d="M9 13v2" />
-                      </svg>
+                      <Bot className="h-4 w-4" />
                     </Avatar>
                   )}
                   <div className="text-sm">{message.content}</div>
@@ -123,25 +105,7 @@ export function ChatAssistant({ isOpen, onClose }: ChatAssistantProps) {
               <div className="flex justify-start">
                 <div className="flex max-w-[80%] items-center gap-2 rounded-lg bg-muted p-3">
                   <Avatar className="h-6 w-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-bot"
-                    >
-                      <path d="M12 8V4H8" />
-                      <rect width="16" height="12" x="4" y="8" rx="2" />
-                      <path d="M2 14h2" />
-                      <path d="M20 14h2" />
-                      <path d="M15 13v2" />
-                      <path d="M9 13v2" />
-                    </svg>
+                    <Bot className="h-4 w-4" />
                   </Avatar>
                   <div className="flex space-x-1">
                     <div className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground"></div>
@@ -160,7 +124,7 @@ export function ChatAssistant({ isOpen, onClose }: ChatAssistantProps) {
           </div>
         </ScrollArea>
       </CardContent>
-      <CardFooter className="p-2">
+      <CardFooter className="border-t p-3">
         <form
           onSubmit={(e) => {
             e.preventDefault()
@@ -174,7 +138,7 @@ export function ChatAssistant({ isOpen, onClose }: ChatAssistantProps) {
             onChange={(e) => setInput(e.target.value)}
             className="flex-1"
           />
-          <Button type="submit" size="icon" disabled={chatMutation.isLoading}>
+          <Button type="submit" size="icon" disabled={chatMutation.isLoading} className="h-8 w-8">
             <Send className="h-4 w-4" />
           </Button>
         </form>

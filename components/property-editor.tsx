@@ -15,39 +15,42 @@ export function PropertyEditor() {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="pb-3">
         <CardTitle>Properties</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
           {activeComponent.properties.map((property) => (
-            <div key={property.name} className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor={property.name} className="text-right">
-                {property.label}
-              </Label>
+            <div key={property.name} className="space-y-2">
+              <Label htmlFor={property.name}>{property.label}</Label>
+
               {property.type === "string" && (
                 <Input
                   id={property.name}
                   value={property.value as string}
                   onChange={(e) => updateComponentProperty(property.name, e.target.value)}
-                  className="col-span-2"
                 />
               )}
+
               {property.type === "boolean" && (
-                <div className="col-span-2 flex items-center">
+                <div className="flex items-center space-x-2">
                   <Switch
                     id={property.name}
                     checked={property.value as boolean}
                     onCheckedChange={(checked) => updateComponentProperty(property.name, checked)}
                   />
+                  <Label htmlFor={property.name} className="font-normal">
+                    {property.value ? "Enabled" : "Disabled"}
+                  </Label>
                 </div>
               )}
+
               {property.type === "select" && (
                 <Select
                   value={property.value as string}
                   onValueChange={(value) => updateComponentProperty(property.name, value)}
                 >
-                  <SelectTrigger className="col-span-2">
+                  <SelectTrigger>
                     <SelectValue placeholder="Select an option" />
                   </SelectTrigger>
                   <SelectContent>
@@ -59,8 +62,9 @@ export function PropertyEditor() {
                   </SelectContent>
                 </Select>
               )}
+
               {property.type === "number" && (
-                <div className="col-span-2 flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <Slider
                     id={property.name}
                     min={property.min || 0}
@@ -68,6 +72,7 @@ export function PropertyEditor() {
                     step={property.step || 1}
                     value={[property.value as number]}
                     onValueChange={([value]) => updateComponentProperty(property.name, value)}
+                    className="flex-1"
                   />
                   <span className="w-12 text-right text-sm">{property.value}</span>
                 </div>

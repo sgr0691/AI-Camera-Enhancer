@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Palette } from "lucide-react"
 
 export function ThemeEditor() {
   const { isThemeEditorOpen, closeThemeEditor, themes, activeTheme } = useTheme()
@@ -41,14 +42,21 @@ export function ThemeEditor() {
     <Dialog open={isThemeEditorOpen} onOpenChange={closeThemeEditor}>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
-          <DialogTitle>Theme Editor</DialogTitle>
+          <DialogTitle className="flex items-center gap-2 text-xl">
+            <Palette className="h-5 w-5" />
+            Theme Editor
+          </DialogTitle>
         </DialogHeader>
-        <Tabs defaultValue="edit">
-          <TabsList className="mb-4">
-            <TabsTrigger value="edit">Edit Theme</TabsTrigger>
-            <TabsTrigger value="create">Create New Theme</TabsTrigger>
+        <Tabs defaultValue="edit" className="w-full">
+          <TabsList className="w-full">
+            <TabsTrigger value="edit" className="flex-1">
+              Edit Theme
+            </TabsTrigger>
+            <TabsTrigger value="create" className="flex-1">
+              Create New Theme
+            </TabsTrigger>
           </TabsList>
-          <TabsContent value="edit">
+          <TabsContent value="edit" className="mt-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Label htmlFor="theme-select">Select Theme:</Label>
@@ -56,7 +64,7 @@ export function ThemeEditor() {
                   id="theme-select"
                   value={editingTheme || ""}
                   onChange={(e) => handleEditTheme(e.target.value)}
-                  className="rounded-md border border-input bg-background px-3 py-1 text-sm"
+                  className="flex-1 rounded-md border border-input bg-background px-3 py-1 text-sm"
                 >
                   <option value="" disabled>
                     Select a theme
@@ -72,7 +80,7 @@ export function ThemeEditor() {
                 <div className="grid grid-cols-2 gap-4">
                   {Object.entries(themeColors).map(([key, value]) => (
                     <div key={key} className="flex items-center gap-2">
-                      <Label htmlFor={key} className="w-40">
+                      <Label htmlFor={key} className="w-40 text-sm">
                         {key}:
                       </Label>
                       <div className="flex flex-1 items-center gap-2">
@@ -81,6 +89,7 @@ export function ThemeEditor() {
                           type="text"
                           value={value}
                           onChange={(e) => handleColorChange(key, e.target.value)}
+                          className="h-8"
                         />
                         <Input
                           type="color"
@@ -100,7 +109,7 @@ export function ThemeEditor() {
               </Button>
             </DialogFooter>
           </TabsContent>
-          <TabsContent value="create">
+          <TabsContent value="create" className="mt-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Label htmlFor="new-theme-name">Theme Name:</Label>
@@ -109,6 +118,7 @@ export function ThemeEditor() {
                   value={newThemeName}
                   onChange={(e) => setNewThemeName(e.target.value)}
                   placeholder="Enter theme name"
+                  className="flex-1"
                 />
               </div>
               <p className="text-sm text-muted-foreground">
