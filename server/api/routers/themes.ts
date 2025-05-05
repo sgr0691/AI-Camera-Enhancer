@@ -1,6 +1,6 @@
 import { z } from "zod"
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc"
-import { prisma } from "@/server/db"
+import { prisma } from "@/lib/prisma"
 
 export const themesRouter = createTRPCRouter({
   getThemes: publicProcedure.query(async () => {

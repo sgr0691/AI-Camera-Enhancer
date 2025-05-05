@@ -66,7 +66,8 @@
     "@trpc/react-query": "latest",
     "superjson": "latest",
     "openai": "latest",
-    "@prisma/client": "latest"
+    "@prisma/client": "latest",
+    "child_process": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",

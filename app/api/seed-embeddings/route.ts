@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server"
-import { PrismaClient } from "@prisma/client"
+import { prisma } from "@/lib/prisma"
 import { OpenAI } from "openai"
 
 export const runtime = "nodejs"
-
-// Initialize Prisma client
-const prisma = new PrismaClient()
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -42,26 +39,27 @@ export async function GET() {
 
     // Generate embeddings for each piece of content
     for (const item of designSystemData) {
-      const embedding = await openai.embeddings.create({
-        model: "text-embedding-3-small",
-        input: item.content,
-      })
+      try {
+        const embedding = await openai.embeddings.create({
+          model: "text-embedding-3-small",
+          input: item.content,
+        })
 
-      await prisma.embedding.create({
-        data: {
-          content: item.content,
-          vector: embedding.data[0].embedding,
-          category: item.category,
-        },
-      })
+        await prisma.embedding.create({
+          data: {
+            content: item.content,
+            vector: embedding.data[0].embedding,
+            category: item.category,
+          },
+        })
+      } catch (embeddingError) {
+        console.error("Error creating embedding:", embeddingError)
+      }
     }
 
     return NextResponse.json({ message: "Embeddings created successfully" })
   } catch (error) {
     console.error("Error seeding embeddings:", error)
     return NextResponse.json({ error: "Failed to seed embeddings" }, { status: 500 })
-  } finally {
-    // Disconnect Prisma client to avoid hanging connections
-    await prisma.$disconnect()
   }
 }
