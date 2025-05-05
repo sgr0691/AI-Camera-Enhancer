@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { executeQuery } from "@/lib/db"
 import { OpenAI } from "openai"
 
 export const runtime = "nodejs"
@@ -31,7 +31,8 @@ const designSystemData = [
 export async function GET() {
   try {
     // Check if we already have embeddings
-    const existingCount = await prisma.embedding.count()
+    const result = await executeQuery('SELECT COUNT(*) as "count" FROM "Embedding"')
+    const existingCount = result[0].count
 
     if (existingCount > 0) {
       return NextResponse.json({ message: "Embeddings already exist" })
@@ -45,13 +46,17 @@ export async function GET() {
           input: item.content,
         })
 
-        await prisma.embedding.create({
-          data: {
-            content: item.content,
-            vector: embedding.data[0].embedding,
-            category: item.category,
-          },
-        })
+        await executeQuery(
+          'INSERT INTO "Embedding" (id, content, vector, category, "createdAt", "updatedAt") VALUES ($1, $2, $3, $4, $5, $6)',
+          [
+            `emb_${Math.random().toString(36).substring(2, 15)}`,
+            item.content,
+            embedding.data[0].embedding,
+            item.category,
+            new Date(),
+            new Date(),
+          ],
+        )
       } catch (embeddingError) {
         console.error("Error creating embedding:", embeddingError)
       }
