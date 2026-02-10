@@ -7,30 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AIPhotoEnhancerApp.swift in Sources = {isa = PBXBuildFile; };
-		ContentView.swift in Sources = {isa = PBXBuildFile; };
-		EnhancementModels.swift in Sources = {isa = PBXBuildFile; };
-		SpeechRecognitionService.swift in Sources = {isa = PBXBuildFile; };
-		EnhancementAPIService.swift in Sources = {isa = PBXBuildFile; };
-		ExportService.swift in Sources = {isa = PBXBuildFile; };
-		EnhancementViewModel.swift in Sources = {isa = PBXBuildFile; };
-		PromptViewModel.swift in Sources = {isa = PBXBuildFile; };
-		Theme.swift in Sources = {isa = PBXBuildFile; };
-		ImageInputView.swift in Sources = {isa = PBXBuildFile; };
-		PromptComposerView.swift in Sources = {isa = PBXBuildFile; };
-		EnhancementStateView.swift in Sources = {isa = PBXBuildFile; };
-		ResultCompareView.swift in Sources = {isa = PBXBuildFile; };
-		GalleryView.swift in Sources = {isa = PBXBuildFile; };
+		A0000001000000000000000A /* AIPhotoEnhancerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000000B /* AIPhotoEnhancerApp.swift */; };
+		A0000001000000000000000C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000000D /* ContentView.swift */; };
+		A0000001000000000000000E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000000F /* Assets.xcassets */; };
+		A0000001000000000000001A /* EnhancementModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000001B /* EnhancementModels.swift */; };
+		A0000001000000000000001C /* SpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000001D /* SpeechRecognitionService.swift */; };
+		A0000001000000000000001E /* EnhancementAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000001F /* EnhancementAPIService.swift */; };
+		A0000001000000000000002A /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000002B /* ExportService.swift */; };
+		A0000001000000000000002C /* EnhancementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000002D /* EnhancementViewModel.swift */; };
+		A0000001000000000000002E /* PromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000002F /* PromptViewModel.swift */; };
+		A0000001000000000000003A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000003B /* Theme.swift */; };
+		A0000001000000000000003C /* ImageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000003D /* ImageInputView.swift */; };
+		A0000001000000000000003E /* PromptComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000003F /* PromptComposerView.swift */; };
+		A0000001000000000000004A /* EnhancementStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000004B /* EnhancementStateView.swift */; };
+		A0000001000000000000004C /* ResultCompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000004D /* ResultCompareView.swift */; };
+		A0000001000000000000004E /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000001000000000000004F /* GalleryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AIPhotoEnhancerApp.swift = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPhotoEnhancerApp.swift; sourceTree = "<group>"; };
-		ContentView.swift = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/ContentView.swift; sourceTree = "<group>"; };
-		Info.plist = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0000001000000000000000A /* AIPhotoEnhancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIPhotoEnhancer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0000001000000000000000B /* AIPhotoEnhancerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPhotoEnhancerApp.swift; sourceTree = "<group>"; };
+		A0000001000000000000000D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A0000001000000000000000F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0000001000000000000001B /* EnhancementModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementModels.swift; sourceTree = "<group>"; };
+		A0000001000000000000001D /* SpeechRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionService.swift; sourceTree = "<group>"; };
+		A0000001000000000000001F /* EnhancementAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementAPIService.swift; sourceTree = "<group>"; };
+		A0000001000000000000002B /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		A0000001000000000000002D /* EnhancementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementViewModel.swift; sourceTree = "<group>"; };
+		A0000001000000000000002F /* PromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViewModel.swift; sourceTree = "<group>"; };
+		A0000001000000000000003B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A0000001000000000000003D /* ImageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInputView.swift; sourceTree = "<group>"; };
+		A0000001000000000000003F /* PromptComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptComposerView.swift; sourceTree = "<group>"; };
+		A0000001000000000000004B /* EnhancementStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementStateView.swift; sourceTree = "<group>"; };
+		A0000001000000000000004D /* ResultCompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCompareView.swift; sourceTree = "<group>"; };
+		A0000001000000000000004F /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		A0000001000000000000005A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		PBXFrameworksBuildPhase = {
+		A0000001000000000000005B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,39 +55,129 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		MainGroup = {
+		A0000001000000000000005C /* AIPhotoEnhancer */ = {
 			isa = PBXGroup;
 			children = (
-				AIPhotoEnhancer,
-			);
-			sourceTree = "<group>";
-		};
-		AIPhotoEnhancer = {
-			isa = PBXGroup;
-			children = (
-				AIPhotoEnhancerApp.swift,
-				Models,
-				Services,
-				ViewModels,
-				Views,
-				Utilities,
-				Resources,
-				Info.plist,
+				A0000001000000000000000B /* AIPhotoEnhancerApp.swift */,
+				A0000001000000000000005D /* Models */,
+				A0000001000000000000005E /* Services */,
+				A0000001000000000000005F /* ViewModels */,
+				A000000100000000000000A0 /* Views */,
+				A000000100000000000000A1 /* Utilities */,
+				A000000100000000000000A2 /* Resources */,
+				A0000001000000000000005A /* Info.plist */,
 			);
 			path = AIPhotoEnhancer;
 			sourceTree = "<group>";
 		};
+		A0000001000000000000005D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000001B /* EnhancementModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A0000001000000000000005E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000001D /* SpeechRecognitionService.swift */,
+				A0000001000000000000001F /* EnhancementAPIService.swift */,
+				A0000001000000000000002B /* ExportService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A0000001000000000000005F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000002D /* EnhancementViewModel.swift */,
+				A0000001000000000000002F /* PromptViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A000000100000000000000A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000000D /* ContentView.swift */,
+				A0000001000000000000003D /* ImageInputView.swift */,
+				A0000001000000000000003F /* PromptComposerView.swift */,
+				A0000001000000000000004B /* EnhancementStateView.swift */,
+				A0000001000000000000004D /* ResultCompareView.swift */,
+				A0000001000000000000004F /* GalleryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A000000100000000000000A1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000003B /* Theme.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A000000100000000000000A2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000000F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A000000100000000000000A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000000A /* AIPhotoEnhancer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A000000100000000000000A4 = {
+			isa = PBXGroup;
+			children = (
+				A0000001000000000000005C /* AIPhotoEnhancer */,
+				A000000100000000000000A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXNativeTarget section */
+		A000000100000000000000A5 /* AIPhotoEnhancer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A000000100000000000000A6 /* Build configuration list for PBXNativeTarget "AIPhotoEnhancer" */;
+			buildPhases = (
+				A000000100000000000000A7 /* Sources */,
+				A0000001000000000000005B /* Frameworks */,
+				A000000100000000000000A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AIPhotoEnhancer;
+			productName = AIPhotoEnhancer;
+			productReference = A0000001000000000000000A /* AIPhotoEnhancer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
-		Project = {
+		A000000100000000000000A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A000000100000000000000A5 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
 			};
-			buildConfigurationList = BuildConfigurationList;
+			buildConfigurationList = A000000100000000000000AA /* Build configuration list for PBXProject "AIPhotoEnhancer" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -80,15 +185,265 @@
 				en,
 				Base,
 			);
-			mainGroup = MainGroup;
-			productRefGroup = MainGroup;
+			mainGroup = A000000100000000000000A4;
+			productRefGroup = A000000100000000000000A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				A000000100000000000000A5 /* AIPhotoEnhancer */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		A000000100000000000000A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000001000000000000000E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A000000100000000000000A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000001000000000000000C /* ContentView.swift in Sources */,
+				A0000001000000000000000A /* AIPhotoEnhancerApp.swift in Sources */,
+				A0000001000000000000001A /* EnhancementModels.swift in Sources */,
+				A0000001000000000000001C /* SpeechRecognitionService.swift in Sources */,
+				A0000001000000000000001E /* EnhancementAPIService.swift in Sources */,
+				A0000001000000000000002A /* ExportService.swift in Sources */,
+				A0000001000000000000002C /* EnhancementViewModel.swift in Sources */,
+				A0000001000000000000002E /* PromptViewModel.swift in Sources */,
+				A0000001000000000000003A /* Theme.swift in Sources */,
+				A0000001000000000000003C /* ImageInputView.swift in Sources */,
+				A0000001000000000000003E /* PromptComposerView.swift in Sources */,
+				A0000001000000000000004A /* EnhancementStateView.swift in Sources */,
+				A0000001000000000000004C /* ResultCompareView.swift in Sources */,
+				A0000001000000000000004E /* GalleryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A000000100000000000000AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A000000100000000000000AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A000000100000000000000AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AIPhotoEnhancer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to capture photos for enhancement.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone for voice input of enhancement prompts.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save enhanced photos to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos for enhancement.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need access to speech recognition for voice input of enhancement prompts.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AIPhotoEnhancer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A000000100000000000000AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AIPhotoEnhancer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to capture photos for enhancement.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone for voice input of enhancement prompts.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save enhanced photos to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos for enhancement.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need access to speech recognition for voice input of enhancement prompts.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AIPhotoEnhancer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A000000100000000000000A6 /* Build configuration list for PBXNativeTarget "AIPhotoEnhancer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000100000000000000AD /* Debug */,
+				A000000100000000000000AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000000100000000000000AA /* Build configuration list for PBXProject "AIPhotoEnhancer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000100000000000000AB /* Debug */,
+				A000000100000000000000AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
 	};
-	rootObject = Project;
+	rootObject = A000000100000000000000A9 /* Project object */;
 }
