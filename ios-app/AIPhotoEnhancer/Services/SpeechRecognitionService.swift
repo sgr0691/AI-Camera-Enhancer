@@ -60,7 +60,7 @@ class SpeechRecognitionService: ObservableObject {
             AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
                 if granted {
                     DispatchQueue.main.async {
-                        self?.startRecording()
+                        self?.beginRecording()
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -71,9 +71,16 @@ class SpeechRecognitionService: ObservableObject {
             return
         }
 
+        beginRecording()
+    }
+
+    private func beginRecording() {
         // Cancel any ongoing task
         recognitionTask?.cancel()
         recognitionTask = nil
+
+        // Ensure speech recognizer is available
+        guard let speechRecognizer = speechRecognizer else { return }
 
         // Configure audio session
         let audioSession = AVAudioSession.sharedInstance()
