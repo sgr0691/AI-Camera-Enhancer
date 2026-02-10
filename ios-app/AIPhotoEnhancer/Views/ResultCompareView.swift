@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ResultCompareView: View {
     let result: EnhancementResult
@@ -15,6 +16,7 @@ struct ResultCompareView: View {
     @State private var showShareSheet = false
     @State private var showSaveConfirmation = false
     @State private var saveError: String?
+    @State private var showSaveErrorAlert = false
 
     private let exportService = ExportService.shared
 
@@ -102,9 +104,10 @@ struct ResultCompareView: View {
         } message: {
             Text("Your enhanced image has been saved to Photos")
         }
-        .alert("Save Failed", isPresented: .constant(saveError != nil)) {
+        .alert("Save Failed", isPresented: $showSaveErrorAlert) {
             Button("OK", role: .cancel) {
                 saveError = nil
+                showSaveErrorAlert = false
             }
         } message: {
             Text(saveError ?? "Unknown error")
@@ -218,6 +221,7 @@ struct ResultCompareView: View {
                 showSaveConfirmation = true
             } catch {
                 saveError = error.localizedDescription
+                showSaveErrorAlert = true
             }
         }
     }

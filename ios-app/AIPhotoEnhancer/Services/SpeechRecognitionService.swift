@@ -39,9 +39,35 @@ class SpeechRecognitionService: ObservableObject {
     func startRecording() {
         guard !isRecording else { return }
 
+        // Check if speech recognizer is available
+        guard let speechRecognizer = speechRecognizer, speechRecognizer.isAvailable else {
+            errorMessage = "Speech recognition is not available for this locale"
+            return
+        }
+
         // Check authorization
         guard authorizationStatus == .authorized else {
             errorMessage = "Speech recognition not authorized"
+            return
+        }
+
+        // Check microphone permission
+        let micPermission = AVAudioSession.sharedInstance().recordPermission
+        if micPermission == .denied {
+            errorMessage = "Microphone access denied. Please enable it in Settings."
+            return
+        } else if micPermission == .undetermined {
+            AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
+                if granted {
+                    DispatchQueue.main.async {
+                        self?.startRecording()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self?.errorMessage = "Microphone permission is required for voice input"
+                    }
+                }
+            }
             return
         }
 
@@ -72,7 +98,7 @@ class SpeechRecognitionService: ObservableObject {
         let inputNode = audioEngine.inputNode
 
         // Start recognition task
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { [weak self] result, error in
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
             guard let self = self else { return }
 
             if let result = result {

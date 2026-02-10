@@ -68,15 +68,44 @@ struct Theme {
     }
 
     // MARK: - Shadow
+    struct ShadowStyle {
+        let color: Color
+        let radius: CGFloat
+        let x: CGFloat
+        let y: CGFloat
+    }
+
     struct Shadow {
-        static let sm = SwiftUI.Shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
-        static let md = SwiftUI.Shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 4)
-        static let lg = SwiftUI.Shadow(color: Color.black.opacity(0.2), radius: 16, x: 0, y: 8)
+        static let sm = ShadowStyle(
+            color: Color.black.opacity(0.1),
+            radius: 4,
+            x: 0,
+            y: 2
+        )
+
+        static let md = ShadowStyle(
+            color: Color.black.opacity(0.15),
+            radius: 8,
+            x: 0,
+            y: 4
+        )
+
+        static let lg = ShadowStyle(
+            color: Color.black.opacity(0.2),
+            radius: 16,
+            x: 0,
+            y: 8
+        )
     }
 }
 
 // MARK: - View Extensions
 extension View {
+    /// Apply a themed shadow preset.
+    func themedShadow(_ style: Theme.ShadowStyle) -> some View {
+        self.shadow(color: style.color, radius: style.radius, x: style.x, y: style.y)
+    }
+
     func cardStyle() -> some View {
         self
             .background(Color(.systemBackground))
