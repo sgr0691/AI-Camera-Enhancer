@@ -60,18 +60,23 @@ class SpeechRecognitionService: ObservableObject {
         } else if micPermission == .undetermined {
             // Request microphone permission
             AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
-                if granted {
-                    DispatchQueue.main.async {
-                        self?.startRecording()
-                    }
-                } else {
-                    DispatchQueue.main.async {
+                DispatchQueue.main.async {
+                    if granted {
+                        self?.beginRecording()
+                    } else {
                         self?.errorMessage = "Microphone access is required for voice input"
                     }
                 }
             }
             return
         }
+        
+        // Permission is granted, proceed with recording
+        beginRecording()
+    }
+    
+    private func beginRecording() {
+        guard !isRecording else { return }
 
         // Cancel any ongoing task
         recognitionTask?.cancel()
