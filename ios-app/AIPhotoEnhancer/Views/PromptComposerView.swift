@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Speech
+import UIKit
 
 struct PromptComposerView: View {
     @ObservedObject var viewModel: PromptViewModel
@@ -125,7 +126,7 @@ struct PromptComposerView: View {
         .cornerRadius(Theme.CornerRadius.md)
         .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
         .alert("Speech Recognition Permission", isPresented: $showSpeechPermissionAlert) {
-            Button("Open Settings", role: .none) {
+            Button("Open Settings") {
                 if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url)
                 }

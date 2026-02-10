@@ -15,12 +15,13 @@ class SpeechRecognitionService: ObservableObject {
     @Published var errorMessage: String?
     @Published var authorizationStatus: SFSpeechRecognizerAuthorizationStatus = .notDetermined
 
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
+    private let speechRecognizer: SFSpeechRecognizer?
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
 
     init() {
+        self.speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
         checkAuthorization()
     }
 
@@ -39,9 +40,36 @@ class SpeechRecognitionService: ObservableObject {
     func startRecording() {
         guard !isRecording else { return }
 
+        // Check if speech recognizer is available
+        guard speechRecognizer != nil else {
+            errorMessage = "Speech recognition is not available for this locale"
+            return
+        }
+
         // Check authorization
         guard authorizationStatus == .authorized else {
             errorMessage = "Speech recognition not authorized"
+            return
+        }
+        
+        // Check microphone permission
+        let micPermission = AVAudioSession.sharedInstance().recordPermission
+        if micPermission == .denied {
+            errorMessage = "Microphone access denied. Please enable it in Settings."
+            return
+        } else if micPermission == .undetermined {
+            // Request microphone permission
+            AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
+                if granted {
+                    DispatchQueue.main.async {
+                        self?.startRecording()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self?.errorMessage = "Microphone access is required for voice input"
+                    }
+                }
+            }
             return
         }
 

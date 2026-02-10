@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import UIKit
 
 struct ImageInputView: View {
     @Binding var selectedImage: UIImage?
@@ -14,7 +15,6 @@ struct ImageInputView: View {
 
     @State private var showingImagePicker = false
     @State private var showingCamera = false
-    @State private var sourceType: ImageSource = .photoLibrary
 
     var body: some View {
         VStack(spacing: Theme.Spacing.md) {
@@ -48,7 +48,6 @@ struct ImageInputView: View {
                 VStack(spacing: Theme.Spacing.md) {
                     // Camera button
                     Button {
-                        sourceType = .camera
                         showingCamera = true
                     } label: {
                         VStack(spacing: Theme.Spacing.sm) {
@@ -74,7 +73,6 @@ struct ImageInputView: View {
 
                     // Photo library button
                     Button {
-                        sourceType = .photoLibrary
                         showingImagePicker = true
                     } label: {
                         HStack {
