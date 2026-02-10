@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct GalleryView: View {
     let history: [EnhancementResult]

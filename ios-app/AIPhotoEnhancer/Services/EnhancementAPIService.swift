@@ -7,11 +7,15 @@
 
 import Foundation
 import UIKit
+import CoreImage
 
 class EnhancementAPIService {
     static let shared = EnhancementAPIService()
 
     private init() {}
+    
+    // Cache CIContext for better performance
+    private let ciContext = CIContext()
 
     // MARK: - API Configuration
     // TODO: Replace with your actual backend API endpoint
@@ -101,7 +105,7 @@ class EnhancementAPIService {
         filter?.setValue(1.1, forKey: kCIInputSaturationKey)
 
         guard let outputImage = filter?.outputImage,
-              let cgImage = CIContext().createCGImage(outputImage, from: outputImage.extent) else {
+              let cgImage = ciContext.createCGImage(outputImage, from: outputImage.extent) else {
             return image
         }
 
