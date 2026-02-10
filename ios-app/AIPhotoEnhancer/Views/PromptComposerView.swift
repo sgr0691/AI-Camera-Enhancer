@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 import Speech
 
 struct PromptComposerView: View {
