@@ -80,6 +80,20 @@ enum EnhancementState: Equatable {
     case loading
     case success(EnhancementResult)
     case error(String)
+    
+    static func == (lhs: EnhancementState, rhs: EnhancementState) -> Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle),
+             (.loading, .loading):
+            return true
+        case let (.error(a), .error(b)):
+            return a == b
+        case let (.success(a), .success(b)):
+            return a.id == b.id
+        default:
+            return false
+        }
+    }
 }
 
 // MARK: - Image Source

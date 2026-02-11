@@ -8,7 +8,7 @@ This document shows how each component from the Next.js web app was translated t
 
 | Web Component | iOS Component | Notes |
 |--------------|---------------|-------|
-| `camera-capture.tsx` | `ImageInputView.swift` | Uses UIImagePickerController for camera & PhotosPicker for library |
+| `camera-capture.tsx` | `ImageInputView.swift` | Uses UIImagePickerController for camera & photo library |
 | `enhance-controls.tsx` | `PromptComposerView.swift` | Added voice input with Speech framework |
 | `enhanced-image.tsx` | `ResultCompareView.swift` | Native slider comparison using GeometryReader |
 | `image-gallery.tsx` | `GalleryView.swift` | LazyVGrid for performance |
